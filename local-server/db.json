@@ -5,6 +5,18 @@
       "lname": "Veesambattu",
       "email": "vmurali100@gmail.com",
       "id": 1
+    },
+    {
+      "fname": "Harish",
+      "lname": "Kumar",
+      "email": "harish@gmail.com",
+      "id": 2
+    },
+    {
+      "fname": "Lokesh MM",
+      "lname": "Kumar",
+      "email": "lokesh@gmail.com",
+      "id": 3
     }
   ]
 }
