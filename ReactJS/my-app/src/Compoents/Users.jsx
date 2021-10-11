@@ -4,9 +4,14 @@ export const Users = () => {
   const [users, setusers] = useState([]);
 
   // Use Effect triggers Afte Component Render Completes
-  useEffect(()=>{
-      setusers(allusers)
-  },[])
+  useEffect(() => {
+    setusers(allusers);
+  }, []);
+
+  const deleteUser = (i) => {
+    let allUsers = users.filter((user, index) => i !== index);
+    setusers(allUsers)
+  };
   return (
     <div>
       <table border="1">
@@ -20,15 +25,27 @@ export const Users = () => {
           </tr>
         </thead>
         <tbody>
-            {users.map((user,i)=>{
-                return <tr key={i}>
-                    <td>{user.fname}</td>
-                    <td>{user.lname}</td>
-                    <td>{user.email}</td>
-                    <td><button>Edit</button></td>
-                    <td><button>Delete</button></td>
-                </tr>
-            })}
+          {users.map((user, i) => {
+            return (
+              <tr key={i}>
+                <td>{user.fname}</td>
+                <td>{user.lname}</td>
+                <td>{user.email}</td>
+                <td>
+                  <button>Edit</button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      deleteUser(i);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
@@ -36,23 +53,22 @@ export const Users = () => {
 };
 
 let allusers = [
-    {
-      fname: "Murali",
-      lname: "Veesambattu",
-      email: "vmurali100@gmail.com",
-      id: 1,
-    },
-    {
-      fname: "Harish",
-      lname: "Kumar",
-      email: "harish@gmail.com",
-      id: 2,
-    },
-    {
-      fname: "Lokesh MM",
-      lname: "Kumar",
-      email: "lokesh@gmail.com",
-      id: 3,
-    },
-  ];
-  
+  {
+    fname: "Murali",
+    lname: "Veesambattu",
+    email: "vmurali100@gmail.com",
+    id: 1,
+  },
+  {
+    fname: "Harish",
+    lname: "Kumar",
+    email: "harish@gmail.com",
+    id: 2,
+  },
+  {
+    fname: "Lokesh MM",
+    lname: "Kumar",
+    email: "lokesh@gmail.com",
+    id: 3,
+  },
+];
