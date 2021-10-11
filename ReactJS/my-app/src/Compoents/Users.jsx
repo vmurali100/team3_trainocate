@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 export const Users = () => {
   const [users, setusers] = useState([]);
+
+  // Use Effect triggers Afte Component Render Completes
   useEffect(()=>{
       setusers(allusers)
   },[])
