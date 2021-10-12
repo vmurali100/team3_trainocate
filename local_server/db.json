@@ -1,16 +1,22 @@
 {
   "users": [
     {
-      "fname": "Jermaine",
-      "lname": "Sooi",
+      "fName": "Jermaine",
+      "lName": "aa",
       "email": "jermainesooi@toppanleefung.com",
       "id": 1
     },
     {
-      "fname": "Darren",
-      "lname": "Updated",
-      "email": "dt@update.com",
+      "fName": "aa",
+      "lName": "aa",
+      "email": "aa",
       "id": 2
+    },
+    {
+      "fName": "Darren",
+      "lName": "Tan",
+      "email": "dt@gmail.com",
+      "id": 3
     }
   ],
   "products": [
