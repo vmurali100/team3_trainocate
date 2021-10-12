@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 // React Forms start
 export const User = () => {
     const [user, setUser] = useState({fName:"", lName:"", email:""});
+    const [index, setIndex] = useState(0)
     const [users, setUsers] = useState([]);
 
     const handleChange = (event) => {
@@ -28,10 +29,22 @@ export const User = () => {
         setUser({fName:"",lName:"",email:""})
     }
 
-    const deleteUser=(i)=>{
+    const deleteUser = (i) =>{
         let allUsers = [...users];
         let newUsers = allUsers.filter((user,index)=>i!==index);
         setUsers(newUsers);
+    }
+
+    const editUser = (user, i) => {
+        setIndex(i);
+        setUser(user);
+    }
+
+    const updateUser = () => {
+        let newUsers = [...users];
+        newUsers[index] = user;
+        setUsers(newUsers);
+        clearForm();
     }
 
     return (
@@ -45,6 +58,7 @@ export const User = () => {
                 <input type="text" name="email" id="email" value={user.email} onChange={(event) => handleChange(event)}/><br/> 
 
                 <button type="button" onClick={handleSubmit}>Add User</button>
+                <button type="button" onClick={updateUser}>Update User</button>
 
             </form>
             <hr />
@@ -64,7 +78,7 @@ export const User = () => {
                             <td>{user.fName}</td>
                             <td>{user.lName}</td>
                             <td>{user.email}</td>
-                            <td><button>Edit User</button></td>
+                            <td><button onClick={() => editUser(user, i)}>Edit User</button></td>
                             <td><button onClick={() => deleteUser(i)}>Delete User</button></td>
                         </tr>
                     })}
