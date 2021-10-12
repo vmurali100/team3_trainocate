@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export const User = () => {
   const [user, setuser] = useState({ fName: "", lName: "", email: "" });
+  const [index, setindex] = useState(0)
   const [users, setusers] = useState([]);
 
   const handleChange = (event) => {
@@ -27,6 +28,18 @@ export const User = () => {
     let newUsers = allUsers.filter((usr, index) => i !== index);
     setusers(newUsers)
   };
+
+  const editUser=(user,i)=>{
+     setindex(i)
+      setuser(user)
+  }
+
+  const updateUser=()=>{
+    let newusers = [...users]
+    newusers[index] = user
+    setusers(newusers)
+    clearForm()
+  }
   return (
     <div>
       <form>
@@ -63,6 +76,7 @@ export const User = () => {
         <button type="button" onClick={handleSubmit}>
           Add User
         </button>
+        <button type="button" onClick={updateUser}>Update User</button>
       </form>
       <hr />
       <table border="1">
@@ -83,7 +97,7 @@ export const User = () => {
                 <td>{user.lName}</td>
                 <td>{user.email}</td>
                 <td>
-                  <button>Edit User</button>
+                  <button onClick={()=>{editUser(user,i)}}>Edit User</button>
                 </td>
                 <td>
                   <button onClick={()=>{delteteUser(i)}}>Delete User</button>
