@@ -17,7 +17,13 @@
       "lname": "Kumar",
       "email": "lokesh@gmail.com",
       "id": 3
+    },
+    {
+      "fname": "Daniel",
+      "lname": "V",
+      "email": "daniel@gmail.com",
+      "id": 4
     }
   ],
-  "proudcts":[]
+  "proudcts": []
 }
