@@ -1,6 +1,6 @@
 import React from "react";
 
-export const StudentInfo = ({student,handleChange,createUser,updateuser}) => {
+export const StudentInfo = ({student,handleChange,createUser,updateuser,isEdit,isInvalid}) => {
   return (
     <div>
       <form>
@@ -46,13 +46,13 @@ export const StudentInfo = ({student,handleChange,createUser,updateuser}) => {
             }}
           />
         </div>
-
-        <button type="button" className="btn btn-primary" onClick={createUser}>
-          Submit
-        </button>
-        <button type="button" className="btn btn-primary" onClick={updateuser}>
+        {isEdit ? <button type="button" className="btn btn-primary" onClick={updateuser}>
           Update
-        </button>
+        </button> :   <button type="button" className="btn btn-primary" onClick={createUser}  disabled={isInvalid}>
+          Submit
+        </button>}
+      
+        
       </form>
     </div>
   );

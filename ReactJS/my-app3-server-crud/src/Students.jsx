@@ -9,17 +9,22 @@ export const Students = () => {
     email: "",
   });
   const [students, setstudents] = useState([]);
+  const [isEdit, setisEdit] = useState(false);
+  const [isInvalid, setisInvalid] = useState(true)
+
   const handleChange = (event) => {
     let newStudent = { ...student };
     newStudent[event.target.name] = event.target.value;
     setStudent(newStudent);
+    validate()
   };
   const createUser = () => {
     console.log(student);
     axios.post("http://localhost:3000/users", student).then((res) => {
       console.log("Student Added Successfully");
       getAllusers();
-      clearUser()
+      clearUser();
+      setisInvalid(true)
     });
   };
   const getAllusers = () => {
@@ -34,12 +39,15 @@ export const Students = () => {
     })
   };
   const editUser = (std) => {
+    setisEdit(true)
     setStudent(std)
   };
   const updateuser = () => {
     axios.put("http://localhost:3000/users/"+student.id,student).then((res)=>{
       getAllusers();
       clearUser()
+      setisEdit(false);
+      setisInvalid(true)
     })
   };
   const clearUser = () => {
@@ -54,7 +62,22 @@ export const Students = () => {
     getAllusers()
   },[])
 
+ const validate=()=>{
+  var check = true;
+ 
+  for(let a in student){
+    if(student[a]===""){
+      check = false
+    }
+  }
 
+  if(check){
+    setisInvalid(false)
+  }else{
+    setisInvalid(true)
+  }
+  
+ }
   return (
     <div>
       <div className="container">
@@ -69,6 +92,8 @@ export const Students = () => {
               editUser={editUser}
               updateuser={updateuser}
               clearUser={clearUser}
+              isEdit={isEdit}
+              isInvalid={isInvalid}
             />
           </div>
           <div className="col">

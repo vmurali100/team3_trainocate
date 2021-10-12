@@ -2,15 +2,39 @@
   "users": [
     {
       "fname": "Lokesh MM",
-      "lname": "Kumar",
+      "lname": "Kumar - Updated",
       "email": "lokesh@gmail.com",
       "id": 3
     },
     {
       "fname": "Daniel - update",
-      "lname": "V",
+      "lname": "VMK",
       "email": "daniel@gmail.com",
       "id": 4
+    },
+    {
+      "fname": "Harish",
+      "lname": "Kumar",
+      "email": "harish@gmail.com",
+      "id": 5
+    },
+    {
+      "fname": "Harish",
+      "lname": "Kumar",
+      "email": "harish@gmail.com",
+      "id": 6
+    },
+    {
+      "fname": "murali",
+      "lname": "krishna",
+      "email": "ram@gmail.com",
+      "id": 7
+    },
+    {
+      "fname": "Harish",
+      "lname": "Kumar",
+      "email": "harish@gmail.co",
+      "id": 8
     }
   ],
   "proudcts": []
