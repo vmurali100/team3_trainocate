@@ -9,13 +9,13 @@ import HoverCounterRender from "./RenderProps/HoverCounterRender";
 import Counter from "./RenderProps/Counter";
 import RefsDemo from "./Refs/RefsDemo";
 import { PortalDemo } from "./PortalDemo/PortalDemo";
+import { ContextCompA } from "./Context/ContextCompA";
+import { UserProvider } from "./Context/userContext";
 
 function App() {
   return (
     <div className="App">
-
-
-      <RefsDemo/>
+      <RefsDemo />
 
       {/* <LifeCycleA myName="Murali Krishna"/> */}
       {/* <ClickCounter/>
@@ -33,7 +33,10 @@ function App() {
           <HoverCounterRender count={count} increment={increment} />
         )}
       /> */}
-      <PortalDemo/>
+      {/* <PortalDemo/> */}
+      <UserProvider value="My Name is Jermain">
+        <ContextCompA />
+      </UserProvider>
     </div>
   );
 }
