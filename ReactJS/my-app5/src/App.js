@@ -8,6 +8,7 @@ import ClickCounterRender from "./RenderProps/ClickCounterRender";
 import HoverCounterRender from "./RenderProps/HoverCounterRender";
 import Counter from "./RenderProps/Counter";
 import RefsDemo from "./Refs/RefsDemo";
+import { PortalDemo } from "./PortalDemo/PortalDemo";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
           <HoverCounterRender count={count} increment={increment} />
         )}
       /> */}
-
+      <PortalDemo/>
     </div>
   );
 }
