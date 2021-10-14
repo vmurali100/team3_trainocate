@@ -1,40 +1,22 @@
 {
   "users": [
     {
-      "fname": "Lokesh MM",
-      "lname": "Kumar - Updated",
-      "email": "lokesh@gmail.com",
-      "id": 3
+      "id": "1",
+      "email": "vmurali100@gmail.com",
+      "username": "111345",
+      "password": "ramul"
     },
     {
-      "fname": "Daniel - update",
-      "lname": "VMK",
-      "email": "daniel@gmail.com",
-      "id": 4
+      "id": "2",
+      "email": "vmurali100@gmail.com",
+      "username": "vmvmvm",
+      "password": "123456"
     },
     {
-      "fname": "Harish",
-      "lname": "Kumar",
-      "email": "harish@gmail.com",
-      "id": 5
-    },
-    {
-      "fname": "Harish",
-      "lname": "Kumar",
-      "email": "harish@gmail.com",
-      "id": 6
-    },
-    {
-      "fname": "murali",
-      "lname": "krishna",
-      "email": "ram@gmail.com",
-      "id": 7
-    },
-    {
-      "fname": "Harish",
-      "lname": "Kumar",
-      "email": "harish@gmail.co",
-      "id": 8
+      "id": "3",
+      "email": "vmurali.ctr@gmail.com",
+      "username": "vmurali",
+      "password": "12345"
     }
   ],
   "proudcts": []

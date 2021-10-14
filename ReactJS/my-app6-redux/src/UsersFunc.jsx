@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createUserAction, deleteUserAction, editUserAction, getAllUsersAction, updateUserAction } from "./actions";
+import { createUserAction, deleteUserAction, editUserAction, getAllUsersAction, showCreateUserAction, updateUserAction } from "./actions";
 import {
   Container,
   Button,
@@ -18,8 +18,7 @@ import {
   Box,
 } from "@mui/material";
 export const UsersFunc = () => {
-  const { users, isEdit } = useSelector((state) => state);
-  console.log(isEdit);
+  const { users, isEdit,isCreate } = useSelector((state) => state);
   const [person, setperson] = useState({
     id: "",
     email: "",
@@ -54,6 +53,8 @@ export const UsersFunc = () => {
   }
   const handleUpdate = () => {
       dispatch(updateUserAction(person))
+      dispatch(editUserAction(false))
+      handleClear()
   };
 
   const handleClear = () => {
@@ -64,8 +65,21 @@ export const UsersFunc = () => {
         password: "",
       })
   };
+
+  const showCreate = ()=>{
+    dispatch(showCreateUserAction(true))
+  }
   return (
     <div>
+        <AppBar position="static">
+        <Toolbar>
+        
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            CRUD App
+          </Typography>
+          <Button color="inherit" onClick={showCreate}>Create User</Button>
+        </Toolbar>
+      </AppBar>
       <Container>
         <TableContainer component={Paper} style={{ marginTop: "80px" }}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -119,14 +133,15 @@ export const UsersFunc = () => {
             </TableBody>
           </Table>
         </TableContainer>
-        <hr />
-        <Box
+       {(isEdit || isCreate) && <div className="form">
+       <Box
           component="form"
           sx={{
             "& > :not(style)": { m: 1, width: "25ch" },
           }}
           noValidate
           autoComplete="off"
+          style={{marginTop:'10px'}}
         >
           <TextField
             id="outlined-basic"
@@ -189,6 +204,8 @@ export const UsersFunc = () => {
             Create User
           </Button>
         )}
+       </div>}
+        
       </Container>
     </div>
   );

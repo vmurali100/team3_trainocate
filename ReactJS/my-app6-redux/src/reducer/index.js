@@ -1,4 +1,4 @@
-import { CREATE_USER, DELETE_USER, EDIT_USER, GET_ALL_USERS, UPDATE_USER } from '../actions';
+import { CREATE_USER, DELETE_USER, EDIT_USER, GET_ALL_USERS, SHOW_CREATE, UPDATE_USER } from '../actions';
 import products from './products.json';
 
 console.log(products)
@@ -7,7 +7,8 @@ let defultState={
     products:products,
     commencts:[],
     details:[],
-    isEdit:false
+    isEdit:false,
+    isCreate:false
 }
 
 export default function rootReducer(state=defultState,action) {
@@ -22,6 +23,8 @@ export default function rootReducer(state=defultState,action) {
             return {...state,users:action.payload}
         case UPDATE_USER:
             return {...state,users:action.payload}
+        case SHOW_CREATE:
+            return {...state,isCreate:action.payload}
         default:
             return state
     }
