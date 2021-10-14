@@ -1,0 +1,10 @@
+1. Create a New application
+2. Create a simple reducer with default State of products
+3. Get fake products JSON data from https://fakestoreapi.com/products
+4. Return that products by default
+5. Create a Store in Index.js with Root reducer
+6. Add that store with <Provider> in Index.js
+7. Create a Products Component
+8. Connect component with Store , pass mapstatetoprops as an orgument which returns the products
+9. Access the Products inforamtion in products component as props 
+10.Iterate the Products and Display the data 
